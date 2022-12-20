@@ -4,7 +4,6 @@ accelerator:
   iconUrl: https://raw.githubusercontent.com/dprocha/icons-accelerator/main/icons/vivo-icon.png
   tags:
   - Terraform
-  - Infra
   - vivo
   - CCOE
   options:
@@ -29,10 +28,6 @@ accelerator:
         value: "hom"
       - text: "Produção"
         value: "prd"
-  - name: projeto
-    inputType: text
-    label: "Projeto:"
-    required: true
   - name: orcamento
     inputType: text
     label: "Orçamento:"
@@ -48,11 +43,11 @@ accelerator:
     display: true
     required: true
     choices:
-      - text: Amazon Web Services
+      - text: "Amazon Web Services"
         value: "aws"
-      - text: Google Cloud Services
+      - text: "Google Cloud Services"
         value: "gcp"
-      - text: Microsoft Azure
+      - text: "Microsoft Azure"
         value: "azure"
 engine:
   merge:
