@@ -52,7 +52,7 @@ accelerator:
 engine:
   merge:
   - include: [ "**/*" ]
-    exclude: [ "terraform/**" ]
+    exclude: [ "terraform/**", "vivo-infraservices-accelerator.yaml"]
   - include: [ "terraform/aws/**" ]
     condition: "#cloud == 'aws'"
   - include: [ "terraform/azure/**" ]
