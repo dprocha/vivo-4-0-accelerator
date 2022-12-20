@@ -1,0 +1,73 @@
+accelerator:
+  displayName: Vivo 4.0 Infrastructure Services
+  description: Este blueprint realiza o setup de um projeto e seus ambiente em um determinado cloud provider.
+  iconUrl: https://raw.githubusercontent.com/dprocha/icons-accelerator/main/icons/vivo-icon.png
+  tags:
+  - Terraform
+  - Infra
+  - vivo
+  - CCOE
+  options:
+  - name: projeto
+    inputType: text
+    label: "Projeto:"
+    required: true
+
+  - name: deploymentName
+    inputType: text
+    label: "Deployment Name:"
+    required: true
+  
+  - name: ambiente
+    label: "Ambiente:"
+    inputType: select
+    dataType: string
+    display: true
+    required: true
+    choices:
+      - text: Desenvolvimento
+        value: "dev"
+      - text: Homologação
+        value: "hom"
+      - text: Produção
+        value: "prd"
+
+  - name: projeto
+    inputType: text
+    label: "Projeto:"
+    required: true
+
+  - name: orcamento
+    inputType: text
+    label: "Orçamento:"
+    required: true
+
+  - name: bu
+    inputType: text
+    label: "BU:"
+    required: true
+
+  - name: cloud
+    label: "Cloud Provider:"
+    inputType: select
+    dataType: string
+    display: true
+    required: true
+    choices:
+      - text: Amazon Web Services
+        value: "aws"
+      - text: Google Cloud Services
+        value: "gcp"
+      - text: Microsoft Azure
+        value: "azure"
+
+engine:
+  merge:
+  - include: [ "**/*" ]
+    exclude: [ "terraform/**" ]
+  - include: [ "terraform/aws/**" ]
+    condition: "#cloud == 'aws'"
+  - include: [ "terraform/azure/**" ]
+    condition: "#cloud == 'azure'"
+  - include: [ "terraform/gcp/**" ]
+    condition: "#cloud == 'gcp'"
