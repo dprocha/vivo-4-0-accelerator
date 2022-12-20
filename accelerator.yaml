@@ -12,12 +12,10 @@ accelerator:
     inputType: text
     label: "Projeto:"
     required: true
-
   - name: deploymentName
     inputType: text
     label: "Deployment Name:"
     required: true
-  
   - name: ambiente
     label: "Ambiente:"
     inputType: select
@@ -25,28 +23,24 @@ accelerator:
     display: true
     required: true
     choices:
-      - text: Desenvolvimento
+      - text: "Desenvolvimento"
         value: "dev"
-      - text: Homologação
+      - text: "Homologação"
         value: "hom"
-      - text: Produção
+      - text: "Produção"
         value: "prd"
-
   - name: projeto
     inputType: text
     label: "Projeto:"
     required: true
-
   - name: orcamento
     inputType: text
     label: "Orçamento:"
     required: true
-
   - name: bu
     inputType: text
     label: "BU:"
     required: true
-
   - name: cloud
     label: "Cloud Provider:"
     inputType: select
@@ -60,7 +54,6 @@ accelerator:
         value: "gcp"
       - text: Microsoft Azure
         value: "azure"
-
 engine:
   merge:
   - include: [ "**/*" ]
