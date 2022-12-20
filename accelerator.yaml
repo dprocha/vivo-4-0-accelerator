@@ -57,10 +57,10 @@ accelerator:
 engine:
   merge:
   - include: [ "**/*" ]
-    exclude: [ "terraform/**" ]
-  - include: [ "terraform/aws/**" ]
-    condition: "#cloud == 'aws'"
-  - include: [ "terraform/azure/**" ]
-    condition: "#cloud == 'azure'"
-  - include: [ "terraform/gcp/**" ]
-    condition: "#cloud == 'gcp'"
+  #   exclude: [ "terraform/**" ]
+  # - include: [ "terraform/aws/**" ]
+  #   condition: "#cloud == 'aws'"
+  # - include: [ "terraform/azure/**" ]
+  #   condition: "#cloud == 'azure'"
+  # - include: [ "terraform/gcp/**" ]
+  #   condition: "#cloud == 'gcp'"
