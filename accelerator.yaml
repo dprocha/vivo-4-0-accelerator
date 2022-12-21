@@ -20,7 +20,7 @@ accelerator:
     label: "Projeto:"
     required: true
   - name: cenario
-    label: "cenario:"
+    label: "Cenário:"
     inputType: select
     dataType: string
     display: true
