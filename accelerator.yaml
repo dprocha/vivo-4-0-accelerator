@@ -7,16 +7,20 @@ accelerator:
   - vivo
   - CCOE
   options:
+  - name: bu
+    inputType: text
+    label: "BU:"
+    required: true
+  - name: centroCusto
+    inputType: text
+    label: "Centro de Custo:"
+    required: true
   - name: projeto
     inputType: text
     label: "Projeto:"
     required: true
-  - name: deploymentName
-    inputType: text
-    label: "Deployment Name:"
-    required: true
-  - name: ambiente
-    label: "Ambiente:"
+  - name: cenario
+    label: "cenario:"
     inputType: select
     dataType: string
     display: true
@@ -28,14 +32,18 @@ accelerator:
         value: "hom"
       - text: "Produção"
         value: "prd"
+  - name: servicos
+    inputType: text
+    label: "Serviços:"
+    required: true
+  - name: gitRepo
+    inputType: text
+    label: "Repositório GitLab:"
+    required: true 
   - name: orcamento
     inputType: text
     label: "Orçamento:"
-    required: true
-  - name: bu
-    inputType: text
-    label: "BU:"
-    required: true
+    required: true  
   - name: cloud
     label: "Cloud Provider:"
     inputType: select
@@ -47,8 +55,12 @@ accelerator:
         value: "aws"
       - text: "Google Cloud Services"
         value: "gcp"
+      - text: "Huawei Cloud"
+        value: "huawei"
       - text: "Microsoft Azure"
         value: "azure"
+      - text: "Oracle Cloud"
+        value: "oci"
 engine:
   merge:
   - include: [ "**/*" ]
@@ -59,3 +71,7 @@ engine:
     condition: "#cloud == 'azure'"
   - include: [ "terraform/gcp/**" ]
     condition: "#cloud == 'gcp'"
+  - include: [ "terraform/oci/**" ]
+    condition: "#cloud == 'oci'"  
+  - include: [ "terraform/huawei/**" ]
+    condition: "#cloud == 'huawei'"  
