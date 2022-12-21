@@ -1,6 +1,6 @@
 accelerator:
-  displayName: Vivo 4.0 Infrastructure Services
-  description: Este blueprint realiza o setup de um projeto e seus ambiente em um determinado cloud provider.
+  displayName: Portal Autonomous
+  description: Crie ambientes completos na nuvem (máquinas virtuais, banco de dados, clusters, balanceadores de cargas e etc).
   iconUrl: https://raw.githubusercontent.com/dprocha/icons-accelerator/main/icons/vivo-icon.png
   tags:
   - Terraform
